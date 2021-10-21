@@ -6,8 +6,8 @@ va applicato uno sconto del 40% per gli over 65.
 L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca. */
 
 
-const ticketCost = document.getElementById("ticket-cost")
-ticketCost.innerHTML = "ticket cost is:";
+const ticketCost = document.getElementById("ticket-cost");
+/* ticketCost.innerHTML = "ticket cost is:"; */
 
 // I ask the user the km he has to travel   (chiedo all'utente i km che deve percorrere)
 const km = parseInt(prompt("How many km do you have to travel?"));
@@ -19,13 +19,18 @@ console.log("user age", age);
 
 // i calculate how much the routes costs whitout discounts    (calcolo quanto costa la tratta senza sconti)
 let baseCost = km * 0.21;
+if (age > 17 && age < 66){
+    baseCost = km * 0.21;
+    ticketCost.innerHTML = "ticket cost is: " + baseCost + "€";
+}
+
 console.log("base cost", baseCost);
 
 // if the user is under 18 years i apply a 20% discount   (se l'utente ha meno di 18 anni applico uno sconto del 20%)
 let costUnder18;
 if (age < 18) {
     costUnder18 = (baseCost * 20) / 100;
-    ticketCost 
+    ticketCost.innerHTML = "ticket cost is: " + costUnder18 + "€";
 } 
 
 console.log("20% discount", costUnder18);
@@ -34,8 +39,11 @@ console.log("20% discount", costUnder18);
 let costOver65;
 if (age > 65) {
     costOver65 = baseCost * 0.40;
+    ticketCost.innerHTML = "ticket cost is: " + costOver65 + "€";
+
 }
 
 console.log("40% discount", costOver65);
 
 // i tell the user the cost of the ticket   (dico all'utente il costo del biglietto)
+
