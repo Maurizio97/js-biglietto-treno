@@ -6,14 +6,15 @@ va applicato uno sconto del 40% per gli over 65.
 L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca. */
 
 
-const ticketCost = document.getElementById("ticket-cost").innerHTML("ciao mondo")
+const ticketCost = document.getElementById("ticket-cost")
 
 // I ask the user the km he has to travel   (chiedo all'utente i km che deve percorrere)
-const km = prompt("How many km do you have to travel?");
-console.log(km)
+const km = parseInt(prompt("How many km do you have to travel?"));
+console.log("km", km);
 
 // i ask the user how old he is  (chiedo all'utente quanti anni ha)
-
+const age = parseInt(prompt("How old are you?"))
+console.log("user age", yearsOld)
 
 // i calculate how much the routes costs whitout discounts    (calcolo quanto costa la tratta senza sconti)
 
